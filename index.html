@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="id">
 <head>
@@ -30,8 +29,8 @@
   background: #0b0010;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  transition: padding-right 0.8s ease; /* animasi halus */
-  padding-right: 0; /* awalnya 0 */
+  transition: padding-right 0.8s ease;
+  padding-right: 0;
 }
 
 body.loaded {
@@ -306,7 +305,7 @@ ul {
 
 ul li {
   position: relative;
-  width: 95px; /* sedikit diperbesar biar tidak terlalu padat */
+  width: 95px;
   height: 95px;
   background: #181818;
   display: flex;
@@ -320,7 +319,6 @@ ul li {
   overflow: visible;
 }
 
-    /* 🔥 Garis sisi berputar (4 sisi pink) – tetap seperti sebelumnya */
     ul li::before {
       content: "";
       position: absolute;
@@ -385,7 +383,6 @@ ul li {
       z-index: 10;
     }
 
-    /* Warna aktif */
     ul li:nth-child(1).active { background: #25D366; box-shadow: 0 25px 45px rgba(37,211,102,0.5); }
     ul li:nth-child(2).active { background: #0088cc; box-shadow: 0 25px 45px rgba(0,136,204,0.5); }
     ul li:nth-child(3).active { background: #010101; box-shadow: 0 25px 45px rgba(0,0,0,0.6); }
@@ -395,7 +392,6 @@ ul li {
       color: #fff;
     }
 
-    /* 🔽 Card View */
     .view-card {
       position: absolute;
       top: 100%;
@@ -433,7 +429,6 @@ ul li {
       }
     }
 
-    /* Warna sesuai icon */
     ul li:nth-child(1).active .view-card { background: #25D366; }
     ul li:nth-child(2).active .view-card { background: #0088cc; }
     ul li:nth-child(3).active .view-card { background: #010101; }
@@ -499,25 +494,21 @@ box-shadow:0 8px 18px rgba(0,0,0,0.5);opacity:0;transform:translateX(-8px) scale
   transition: transform 1s cubic-bezier(.2,.9,.2,1);
 }
 
-/* 🎯 Efek geser 3D hanya di sekitar kartu dan hanya saat depan */
 .card-wrap:not(.flipped):hover .card {
   transform: rotateY(10deg) rotateX(8deg) scale(1.05);
   box-shadow: 0 25px 60px rgba(255, 79, 195, 0.3);
 }
 
-/* Saat hover keluar, balik halus */
 .card-wrap .card {
   transition: transform 0.6s ease, box-shadow 0.6s ease;
 }
 
-/* Saat di-flip (bagian tentang) */
 .card-wrap.flipped .card {
   transform: rotateY(180deg);
-  box-shadow: none; /* hilangkan efek bayangan */
-  cursor: default;  /* pointer berubah normal */
+  box-shadow: none;
+  cursor: default;
 }
 
-/* === Sisi depan (foto cewek) === */
 .card .front {
   position: absolute;
   width: 100%;
@@ -529,7 +520,6 @@ box-shadow:0 8px 18px rgba(0,0,0,0.5);opacity:0;transform:translateX(-8px) scale
   transform-style: preserve-3d;
 }
 
-/* === Sisi belakang (icon skill) === */
 .card .back {
   position: absolute;
   width: 100%;
@@ -548,7 +538,6 @@ box-shadow:0 8px 18px rgba(0,0,0,0.5);opacity:0;transform:translateX(-8px) scale
   box-shadow: inset 0 0 20px rgba(255, 0, 180, 0.2);
 }
 
-/* === Icon Skill === */
 .skill {
   display: flex;
   align-items: center;
@@ -557,7 +546,7 @@ box-shadow:0 8px 18px rgba(0,0,0,0.5);opacity:0;transform:translateX(-8px) scale
   border-radius: 10px;
   background: rgba(255,255,255,0.05);
   box-shadow: 0 5px 14px rgba(0,0,0,0.5);
-  opacity: 1; /* langsung tampil */
+  opacity: 1;
   transform: none;
   transition: 0.3s ease;
 }
@@ -572,14 +561,13 @@ box-shadow:0 8px 18px rgba(0,0,0,0.5);opacity:0;transform:translateX(-8px) scale
   color: #fff;
 }
 #cardWrap, #card {
-  -webkit-user-select: none; /* tidak bisa seleksi */
+  -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  -webkit-touch-callout: none; /* nonaktifkan menu “download image” di iOS */
-  pointer-events: none; /* blokir klik dan tap */
+  -webkit-touch-callout: none;
+  pointer-events: none;
 }
-/* === SIDEBAR KANAN (FULL HEIGHT) === */
 .sidebar-container {
   position: fixed;
   top: 0;
@@ -593,7 +581,7 @@ box-shadow:0 8px 18px rgba(0,0,0,0.5);opacity:0;transform:translateX(-8px) scale
 
 .sidebar {
   width: 80px;
-  height: 125vh; /* tetap panjang seperti yang kamu mau */
+  height: 125vh;
   background: rgba(10, 0, 20, 0.7);
   backdrop-filter: blur(12px);
   display: flex;
@@ -602,7 +590,7 @@ box-shadow:0 8px 18px rgba(0,0,0,0.5);opacity:0;transform:translateX(-8px) scale
   border-top-left-radius: 16px;
   border-bottom-left-radius: 0;
   box-shadow: -4px 0 25px rgba(0,0,0,0.5);
-  padding: 25px 0 80px 0; /* ⬅️ tambah padding bawah 80px */
+  padding: 25px 0 80px 0;
   transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
@@ -651,7 +639,6 @@ box-shadow:0 8px 18px rgba(0,0,0,0.5);opacity:0;transform:translateX(-8px) scale
   box-shadow: 0 0 20px rgba(255,79,195,0.4);
 }
 
-/* Bagian bawah sidebar */
 .sidebar-bottom {
   display: flex;
   flex-direction: column;
@@ -660,7 +647,6 @@ box-shadow:0 8px 18px rgba(0,0,0,0.5);opacity:0;transform:translateX(-8px) scale
   margin-bottom: 25px;
 }
 
-/* Tombol musik */
 .music-btn {
   width: 55px;
   height: 55px;
@@ -680,7 +666,6 @@ box-shadow:0 8px 18px rgba(0,0,0,0.5);opacity:0;transform:translateX(-8px) scale
   box-shadow: 0 0 35px rgba(255,79,195,0.6);
 }
 
-/* Tombol panah */
 .expand-btn {
   border: none;
   outline: none;
@@ -700,14 +685,12 @@ box-shadow:0 8px 18px rgba(0,0,0,0.5);opacity:0;transform:translateX(-8px) scale
   animation: none;
 }
 
-/* Animasi kedip panah */
 @keyframes pulse {
   0% { box-shadow: 0 0 10px rgba(255,79,195,0.3); opacity: 0.8; }
   50% { box-shadow: 0 0 25px rgba(255,79,195,0.6); opacity: 1; }
   100% { box-shadow: 0 0 10px rgba(255,79,195,0.3); opacity: 0.8; }
 }
 
-/* Panel expand */
 .expand-panel {
   width: 0;
   opacity: 0;
@@ -720,7 +703,7 @@ box-shadow:0 8px 18px rgba(0,0,0,0.5);opacity:0;transform:translateX(-8px) scale
   transition: all 0.4s ease;
   box-shadow: inset 0 0 40px rgba(255,79,195,0.1);
   color: #fff;
-  height: 125vh; /* ⬅️ tambahan: perpanjang ke bawah */
+  height: 125vh;
 }
 
 .expand-panel.active {
@@ -798,13 +781,13 @@ box-shadow:0 8px 18px rgba(0,0,0,0.5);opacity:0;transform:translateX(-8px) scale
   color: var(--pink-2);
 }
 header {
-  position: fixed; /* bikin header tetap di atas */
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(10, 0, 20, 0.8); /* sedikit transparan biar nyatu dengan tema */
+  background: rgba(10, 0, 20, 0.8);
   backdrop-filter: blur(10px);
-  z-index: 9999; /* pastikan di atas elemen lain */
+  z-index: 9999;
   padding: 15px 40px;
   display: flex;
   align-items: center;
@@ -853,13 +836,10 @@ header {
 <section id="about" class="about" style="margin-top:28px">
   <div class="about-grid">
     <div class="avatar reveal-left">
-      <!-- CARD 3D ORIGINAL MULAI -->
       <div class="stage" id="stage">
-        <!-- 🔥 Tambahan area interaktif -->
         <div class="card-area" id="cardArea">
           <div class="card-wrap" id="cardWrap" tabindex="0" aria-label="Interactive 3D card">
             <div class="card" id="card">
-              <!-- FRONT -->
               <div class="face front" id="frontFace">
                 <div class="front-inner">
                   <div class="photo-box" id="photoBox">
@@ -882,7 +862,6 @@ header {
                 </div>
               </div>
 
-              <!-- BACK -->
               <div class="face back" id="backFace" aria-hidden="true">
                 <div class="pink-accent" aria-hidden="true"></div>
                 <div class="back-inner" id="backInner">
@@ -895,9 +874,7 @@ header {
             </div>
           </div>
         </div>
-        <!-- 🔥 END: card-area -->
       </div>
-      <!-- CARD 3D ORIGINAL SELESAI -->
     </div>
 
     <div>
@@ -1247,7 +1224,6 @@ header {
         Jangan ragu untuk menghubungi saya melalui channel di bawah ini.
       </p>
 
-      <!-- 3D Interactive Contact List -->
         <ul>
     <li data-link="https://wa.me/message/SED4VTNYYJHOJ1">
       <a><i class="fab fa-whatsapp"></i></a>
@@ -1394,16 +1370,14 @@ const expandPanel = document.querySelector('.expand-panel');
 const musicBtn = document.querySelector('.music-btn');
 
 let isPlaying = false;
-const audio = new Audio('https://k.top4top.io/m_35750usyu1.mp3'); // link musik kamu
+const audio = new Audio('https://k.top4top.io/m_35750usyu1.mp3');
 
-// toggle panel
 expandBtn.addEventListener('click', () => {
   expandPanel.classList.toggle('active');
   expandBtn.querySelector('i').classList.toggle('fa-arrow-left');
   expandBtn.querySelector('i').classList.toggle('fa-arrow-right');
 });
 
-// kontrol musik
 musicBtn.addEventListener('click', () => {
   if (!isPlaying) {
     audio.play();
@@ -1417,7 +1391,6 @@ musicBtn.addEventListener('click', () => {
   isPlaying = !isPlaying;
 });
 
-// animasi berputar
 const style = document.createElement('style');
 style.textContent = `
 @keyframes spin {
@@ -1500,7 +1473,7 @@ const buttons = document.querySelectorAll('ul li');
     });
 const counters = document.querySelectorAll('.count');
 counters.forEach(counter => {
-  const target = +counter.getAttribute('data-target'); // angka murni
+  const target = +counter.getAttribute('data-target');
   let count = 0;
   const duration = 6000; 
   const stepTime = 20;
@@ -1578,7 +1551,10 @@ music.addEventListener('ended', () => {
 </script>
 <script>
 AOS.init({ duration: 800, once: true });
-(function(_0x4036a3,_0x457333){function _0xe9778a(_0x46bfff,_0x2c5975,_0x37ea47,_0x31d9ac){return _0x50ea(_0x37ea47- -0x14a,_0x31d9ac);}const _0x4781d4=_0x4036a3();function _0x511e03(_0x2ff9da,_0xf432e,_0x5445a3,_0x51e215){return _0x50ea(_0x51e215-0x156,_0xf432e);}while(!![]){try{const _0x12b17a=parseInt(_0xe9778a(0x10,0x13,-0x5,-0x19))/(0xc94+-0x10c*0x7+-0x1*0x53f)*(-parseInt(_0x511e03(0x2a1,0x295,0x2b0,0x29e))/(-0x19bf+-0xb64+0x101*0x25))+parseInt(_0x511e03(0x28f,0x286,0x2a6,0x289))/(0x1046*0x1+0x1771*-0x1+-0x72e*-0x1)+parseInt(_0xe9778a(-0x59,-0x38,-0x37,-0x5c))/(-0x1c32*0x1+-0x16b+0x1da1)*(-parseInt(_0xe9778a(0x5,0x1c,-0x3,-0x5))/(-0x1f31+0xafb+0x143b*0x1))+parseInt(_0xe9778a(-0x35,-0x9,-0x2d,-0x3a))/(0x3*-0x12a+-0x1b1b+-0xa35*-0x3)+-parseInt(_0xe9778a(-0x4e,-0x4f,-0x32,-0x32))/(-0x1194+0xcdf*-0x3+0x3838)*(parseInt(_0xe9778a(-0x53,-0x4a,-0x38,-0x1d))/(-0x2fd*0x2+-0xee3+0x6f7*0x3))+parseInt(_0x511e03(0x26f,0x242,0x238,0x252))/(0x1c54*0x1+0x260f+-0xb0f*0x6)*(-parseInt(_0x511e03(0x272,0x22f,0x239,0x255))/(0xb2d*0x3+0x177e+-0x38fb))+parseInt(_0xe9778a(-0x35,-0x65,-0x40,-0x3f))/(-0x2169+-0x1bd6+-0xf*-0x416);if(_0x12b17a===_0x457333)break;else _0x4781d4['push'](_0x4781d4['shift']());}catch(_0x4f21fe){_0x4781d4['push'](_0x4781d4['shift']());}}}(_0x3e25,-0x1*0x978c5+-0x1*0x102731+0x242f6e));const _0x23927f=(function(){const _0x30c34f={};_0x30c34f['NzpeD']=_0x364688(0x36a,0x388,0x37f,0x3a3);function _0x1f61e2(_0x275778,_0x59b85e,_0x5507d0,_0x329891){return _0x50ea(_0x5507d0- -0x2c2,_0x59b85e);}_0x30c34f[_0x1f61e2(-0x17b,-0x187,-0x19e,-0x1b5)]=function(_0x90c086,_0x2d5bbe){return _0x90c086!==_0x2d5bbe;};function _0x364688(_0x2b92c1,_0x171984,_0x2cd31a,_0xb7e3ae){return _0x50ea(_0x2cd31a-0x273,_0xb7e3ae);}_0x30c34f['IScXo']='VyALC';const _0x195119=_0x30c34f;let _0x24d2c7=!![];return function(_0xaa4fc8,_0x1ebf24){const _0x29d756={};_0x29d756['ThCgL']=function(_0x3df4ca,_0x15c2a6){return _0x3df4ca===_0x15c2a6;};function _0xcd454f(_0x2ee0fa,_0x329530,_0x44d6fa,_0x277559){return _0x364688(_0x2ee0fa-0x55,_0x329530-0x2e,_0x277559- -0x1b0,_0x44d6fa);}function _0x2d8f06(_0x1f1837,_0x50b903,_0x784e7c,_0x17f913){return _0x1f61e2(_0x1f1837-0x1f3,_0x17f913,_0x1f1837-0x425,_0x17f913-0xe1);}_0x29d756[_0x2d8f06(0x277,0x288,0x260,0x268)]=_0x195119['NzpeD'];const _0x549eee=_0x29d756;if(_0x195119[_0x2d8f06(0x287,0x29c,0x274,0x25e)](_0x195119[_0x2d8f06(0x290,0x27e,0x268,0x286)],_0x195119[_0xcd454f(0x1ce,0x1e0,0x1ec,0x1f0)])){const _0x2be9ab=_0x3f11b8?function(){function _0x476dda(_0x200fb6,_0x2b845d,_0x3de465,_0x548503){return _0x2d8f06(_0x548503- -0x440,_0x2b845d-0x192,_0x3de465-0x1bc,_0x200fb6);}if(_0x23ce55){const _0x454f70=_0x3e5f9a[_0x476dda(-0x1bd,-0x1d3,-0x1a9,-0x1cc)](_0x487663,arguments);return _0x319347=null,_0x454f70;}}:function(){};return _0x23e7b7=![],_0x2be9ab;}else{const _0xe43efc=_0x24d2c7?function(){function _0x42b73f(_0x4aa36f,_0x2dde79,_0x5947bd,_0x2905c1){return _0xcd454f(_0x4aa36f-0x6c,_0x2dde79-0x1a4,_0x4aa36f,_0x5947bd- -0x2ba);}function _0x38d50e(_0x4fea7d,_0x30a666,_0x30daf3,_0x148da0){return _0x2d8f06(_0x30a666-0x1ba,_0x30a666-0x123,_0x30daf3-0xe,_0x4fea7d);}if(_0x549eee[_0x38d50e(0x426,0x444,0x463,0x45a)](_0x549eee[_0x38d50e(0x41e,0x431,0x414,0x419)],_0x549eee[_0x42b73f(-0xf5,-0xe8,-0xe3,-0xf7)])){if(_0x1ebf24){const _0x341c06=_0x1ebf24[_0x42b73f(-0xcf,-0xff,-0xe6,-0xe6)](_0xaa4fc8,arguments);return _0x1ebf24=null,_0x341c06;}}else{const _0x2d4401=_0x33fab8[_0x38d50e(0x44f,0x42e,0x44d,0x421)](_0x419e74,arguments);return _0x2ad664=null,_0x2d4401;}}:function(){};return _0x24d2c7=![],_0xe43efc;}};}());function _0x2640dd(_0xc8ae91,_0x265c4c,_0x11ba8c,_0x1341ed){return _0x50ea(_0xc8ae91-0xa1,_0x265c4c);}function _0x50ea(_0x3e275c,_0x5893a7){const _0x2d4c76=_0x3e25();return _0x50ea=function(_0x5e4d83,_0x1caffe){_0x5e4d83=_0x5e4d83-(-0xea8+0x23a3+-0x1400);let _0x20350c=_0x2d4c76[_0x5e4d83];if(_0x50ea['tszsfJ']===undefined){var _0x35e7ef=function(_0x3a3af7){const _0x3e0be1='abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789+/=';let _0x40f012='',_0xf87ba8='',_0x2cbe7d=_0x40f012+_0x35e7ef;for(let _0x5a4b7e=-0x11bc+0x1831+0x57*-0x13,_0x140f15,_0x5f460e,_0x82be0b=-0x680*-0x1+-0x1100+-0x20*-0x54;_0x5f460e=_0x3a3af7['charAt'](_0x82be0b++);~_0x5f460e&&(_0x140f15=_0x5a4b7e%(0x1a*-0x17+0x1b*0x11d+0x29*-0xad)?_0x140f15*(0x937+-0xd6e+0x477)+_0x5f460e:_0x5f460e,_0x5a4b7e++%(0x1387*0x2+0x404+0x21*-0x14e))?_0x40f012+=_0x2cbe7d['charCodeAt'](_0x82be0b+(-0xcc2+0x143*-0x14+0x2608))-(0x9*-0x1d+-0x222c+0x137*0x1d)!==-0x1811+-0x1ca7+-0x2*-0x1a5c?String['fromCharCode'](0x1819+0xd0d+-0x2427&_0x140f15>>(-(-0xc4c*-0x1+0x5b*-0x38+0x79e)*_0x5a4b7e&0x741+-0x86*-0x2+-0x847)):_0x5a4b7e:-0x1*-0x2291+-0x1*-0xead+-0x835*0x6){_0x5f460e=_0x3e0be1['indexOf'](_0x5f460e);}for(let _0xc3a498=-0x5*-0x39+0x22e7+-0x2404,_0x1cc205=_0x40f012['length'];_0xc3a498<_0x1cc205;_0xc3a498++){_0xf87ba8+='%'+('00'+_0x40f012['charCodeAt'](_0xc3a498)['toString'](-0xb5*-0x17+-0x95*-0x35+-0x2f0c*0x1))['slice'](-(0x384+0xeb1*0x1+-0x1233));}return decodeURIComponent(_0xf87ba8);};_0x50ea['gXQhjt']=_0x35e7ef,_0x3e275c=arguments,_0x50ea['tszsfJ']=!![];}const _0x9356af=_0x2d4c76[0x1b76+-0x20dc+-0x566*-0x1],_0x304deb=_0x5e4d83+_0x9356af,_0x945983=_0x3e275c[_0x304deb];if(!_0x945983){const _0xb8337a=function(_0x459db1){this['rEbJso']=_0x459db1,this['kUwvVI']=[-0x336+-0x912+0xc49,0x1748+0x122+0x271*-0xa,-0x236a+0xf6c+0x13fe*0x1],this['TPTWcP']=function(){return'newState';},this['jNNPfu']='\x5cw+\x20*\x5c(\x5c)\x20*{\x5cw+\x20*',this['QfEdWo']='[\x27|\x22].+[\x27|\x22];?\x20*}';};_0xb8337a['prototype']['LrSHqD']=function(){const _0x57c02a=new RegExp(this['jNNPfu']+this['QfEdWo']),_0x2d37d1=_0x57c02a['test'](this['TPTWcP']['toString']())?--this['kUwvVI'][0x238f*0x1+-0x23fe+0x70]:--this['kUwvVI'][-0x26ea+-0x5*0x241+0x1bb*0x1d];return this['vPZqWF'](_0x2d37d1);},_0xb8337a['prototype']['vPZqWF']=function(_0x301050){if(!Boolean(~_0x301050))return _0x301050;return this['cjpjne'](this['rEbJso']);},_0xb8337a['prototype']['cjpjne']=function(_0x45ac23){for(let _0x33b8a5=-0x3*-0xce3+-0x1*-0x2694+-0x19bf*0x3,_0x10ed00=this['kUwvVI']['length'];_0x33b8a5<_0x10ed00;_0x33b8a5++){this['kUwvVI']['push'](Math['round'](Math['random']())),_0x10ed00=this['kUwvVI']['length'];}return _0x45ac23(this['kUwvVI'][-0x2411+0x1*-0x1bbe+0x3fcf]);},new _0xb8337a(_0x50ea)['LrSHqD'](),_0x20350c=_0x50ea['gXQhjt'](_0x20350c),_0x3e275c[_0x304deb]=_0x20350c;}else _0x20350c=_0x945983;return _0x20350c;},_0x50ea(_0x3e275c,_0x5893a7);}const _0x2d2378=_0x23927f(this,function(){function _0x45813d(_0x2f9513,_0x3d9287,_0x2ac4f0,_0x3db4cf){return _0x50ea(_0x2f9513-0x386,_0x2ac4f0);}const _0x1c6721={};function _0x55649f(_0x8099c1,_0x189616,_0x170f5c,_0x557986){return _0x50ea(_0x8099c1-0x38d,_0x189616);}_0x1c6721[_0x55649f(0x4d6,0x4ee,0x4ad,0x4e4)]=_0x55649f(0x4cd,0x4df,0x4af,0x4b1)+'+$';const _0x483e02=_0x1c6721;return _0x2d2378[_0x55649f(0x492,0x4ae,0x48b,0x47d)]()['search'](_0x483e02['SOXlJ'])['toString']()[_0x55649f(0x4d1,0x4d8,0x4d5,0x4b5)+'r'](_0x2d2378)[_0x55649f(0x49b,0x4b7,0x479,0x480)](_0x483e02[_0x45813d(0x4cf,0x4b8,0x4b5,0x4a9)]);});_0x2d2378();function _0x379aec(_0x3225e9,_0x85a094,_0x1daeac,_0x2c840c){return _0x50ea(_0x1daeac- -0x8d,_0x85a094);}const _0xddf28a=(function(){const _0x1f0fab={};function _0xd104da(_0x171bca,_0x1ac9cf,_0x30f817,_0x373892){return _0x50ea(_0x373892- -0x3a3,_0x171bca);}_0x1f0fab[_0xd104da(-0x29c,-0x28f,-0x2b2,-0x294)]=function(_0x13fa27,_0x54634e){return _0x13fa27+_0x54634e;},_0x1f0fab[_0x3d0c9e(0x37c,0x399,0x39f,0x383)]=_0x3d0c9e(0x361,0x346,0x331,0x342)+'ctor(\x22retu'+_0x3d0c9e(0x3a5,0x39e,0x372,0x37d)+'\x20)';function _0x3d0c9e(_0x42fb99,_0x591495,_0xeb561f,_0x155451){return _0x50ea(_0x155451-0x240,_0x42fb99);}_0x1f0fab[_0x3d0c9e(0x369,0x383,0x36d,0x365)]=_0x3d0c9e(0x35d,0x39f,0x358,0x37e),_0x1f0fab[_0x3d0c9e(0x38e,0x395,0x369,0x37a)]=_0xd104da(-0x291,-0x298,-0x28f,-0x272),_0x1f0fab[_0xd104da(-0x27b,-0x26f,-0x289,-0x27d)]=_0x3d0c9e(0x379,0x375,0x376,0x382),_0x1f0fab[_0xd104da(-0x27e,-0x2ad,-0x28a,-0x29a)]=function(_0x398e19,_0x1ee89e){return _0x398e19!==_0x1ee89e;},_0x1f0fab[_0xd104da(-0x2ad,-0x283,-0x2a8,-0x2a0)]=_0x3d0c9e(0x32c,0x345,0x340,0x355);const _0x1c2738=_0x1f0fab;let _0x5d0e2a=!![];return function(_0x35bb13,_0x2805e8){function _0x421388(_0x2a97c4,_0x3c66a7,_0x3e38c4,_0x4988de){return _0xd104da(_0x2a97c4,_0x3c66a7-0xa4,_0x3e38c4-0x179,_0x3c66a7-0x48b);}const _0x5b6c61={'hTanH':function(_0x4cd33f,_0x47a80b){return _0x4cd33f(_0x47a80b);},'OJeEl':function(_0x286988,_0x49a6e7){function _0xbfdf15(_0x4a24d2,_0x3f6439,_0x4cbec7,_0x2740e3){return _0x50ea(_0x3f6439-0x1e3,_0x2740e3);}return _0x1c2738[_0xbfdf15(0x2ce,0x2f2,0x2f9,0x313)](_0x286988,_0x49a6e7);},'PiBRj':_0x1c2738['yKcVY'],'rTqxM':_0x1c2738[_0x421388(0x22b,0x20d,0x1e7,0x219)],'RriJm':_0x56005e(0x8c,0xa8,0xa8,0x8c),'Iglwg':_0x1c2738['JHOFX'],'VUJzi':_0x1c2738[_0x421388(0x21a,0x20e,0x1fb,0x1f9)]};function _0x56005e(_0x23fdc0,_0x5e0efa,_0x5ef1cb,_0x361890){return _0x3d0c9e(_0x23fdc0,_0x5e0efa-0xf5,_0x5ef1cb-0x102,_0x361890- -0x2fa);}if(_0x1c2738[_0x56005e(0x56,0x33,0x36,0x4f)](_0x1c2738[_0x421388(0x1de,0x1eb,0x1e0,0x205)],_0x1c2738['naZWq'])){const _0x1166d2=_0x599fde[_0x56005e(0x98,0x96,0xb1,0x8a)+'r'][_0x421388(0x213,0x229,0x202,0x210)][_0x421388(0x1eb,0x1f5,0x214,0x1f7)](_0x33fa8a),_0x369346=_0x2c30ca[_0x3e275c],_0xd57372=_0x5893a7[_0x369346]||_0x1166d2;_0x1166d2[_0x421388(0x1f0,0x211,0x20a,0x20d)]=_0x2d4c76[_0x421388(0x1ef,0x1f5,0x20a,0x1d2)](_0x5e4d83),_0x1166d2['toString']=_0xd57372[_0x421388(0x1f4,0x1ed,0x1fc,0x213)][_0x56005e(0x6f,0x58,0x65,0x53)](_0xd57372),_0x1caffe[_0x369346]=_0x1166d2;}else{const _0x40423e=_0x5d0e2a?function(){function _0x44fea0(_0x9e2410,_0x3e854c,_0x4f82c7,_0x5ab1c0){return _0x56005e(_0x3e854c,_0x3e854c-0x29,_0x4f82c7-0x18,_0x9e2410- -0x1b9);}function _0x1d373b(_0x5e486b,_0x187937,_0x510eb5,_0x30e34e){return _0x56005e(_0x5e486b,_0x187937-0xec,_0x510eb5-0x13d,_0x30e34e- -0xc4);}const _0x59410f={'gumlW':function(_0x32a23e,_0x8f9e96){function _0x14ec95(_0x13d09c,_0x363bc3,_0x3ac7a0,_0x59d9ac){return _0x50ea(_0x13d09c- -0x31,_0x59d9ac);}return _0x5b6c61[_0x14ec95(0x11b,0x11c,0x141,0x142)](_0x32a23e,_0x8f9e96);},'PdOrE':function(_0x564803,_0x1d630a){function _0x26e4fb(_0x213329,_0x24b117,_0x8e28a,_0x5a6f31){return _0x50ea(_0x24b117-0x2b7,_0x5a6f31);}return _0x5b6c61[_0x26e4fb(0x3dd,0x3df,0x3d5,0x3c8)](_0x564803,_0x1d630a);},'vALqd':_0x5b6c61[_0x1d373b(-0x7d,-0x3a,-0x6d,-0x62)],'GVkdg':_0x44fea0(-0x175,-0x16a,-0x185,-0x178),'tTjQC':_0x5b6c61['rTqxM'],'dkIbZ':_0x1d373b(-0x74,-0x74,-0x3b,-0x60),'GKEhA':_0x5b6c61[_0x1d373b(-0x99,-0xa1,-0x77,-0x7d)],'CGoCA':_0x5b6c61[_0x1d373b(-0x4b,-0x2d,-0x52,-0x48)]};if(_0x2805e8){if(_0x5b6c61[_0x44fea0(-0x16c,-0x15e,-0x179,-0x171)]===_0x5b6c61[_0x1d373b(-0x79,-0x58,-0x98,-0x77)]){const _0x1a1982=_0x2805e8[_0x1d373b(-0x54,-0x5c,-0x96,-0x6d)](_0x35bb13,arguments);return _0x2805e8=null,_0x1a1982;}else{let _0x19d602;try{const _0xc40a1c=_0x59410f[_0x1d373b(-0x3f,-0x4f,-0x4d,-0x34)](_0xaa08b3,_0x59410f['PdOrE'](_0x1d373b(-0x7a,-0x80,-0x78,-0x7e)+'nction()\x20',_0x59410f[_0x44fea0(-0x148,-0x130,-0x145,-0x126)])+');');_0x19d602=_0xc40a1c();}catch(_0x42d01f){_0x19d602=_0x311249;}const _0x1c331b=_0x19d602[_0x44fea0(-0x128,-0x117,-0x111,-0x11a)]=_0x19d602[_0x44fea0(-0x128,-0x123,-0x101,-0xff)]||{},_0x3c76cf=[_0x59410f[_0x44fea0(-0x16f,-0x171,-0x14e,-0x17f)],'warn',_0x59410f[_0x1d373b(-0x5a,-0x69,-0x48,-0x63)],_0x59410f[_0x44fea0(-0x13c,-0x120,-0x119,-0x11c)],_0x59410f[_0x1d373b(-0x7d,-0x71,-0x5a,-0x68)],_0x59410f[_0x44fea0(-0x153,-0x16f,-0x137,-0x170)],'trace'];for(let _0x382359=-0x55b*0x6+-0x1ee7+0x3f09;_0x382359<_0x3c76cf[_0x44fea0(-0x147,-0x13c,-0x156,-0x166)];_0x382359++){const _0x3b9e05=_0x47684f[_0x44fea0(-0x12f,-0x132,-0x131,-0x126)+'r'][_0x1d373b(-0x62,-0x46,-0x5b,-0x3d)][_0x1d373b(-0x92,-0x4d,-0x5b,-0x71)](_0x428313),_0x298064=_0x3c76cf[_0x382359],_0x41b424=_0x1c331b[_0x298064]||_0x3b9e05;_0x3b9e05['__proto__']=_0xe56738[_0x1d373b(-0x71,-0x8c,-0x8a,-0x71)](_0x2dccfc),_0x3b9e05[_0x1d373b(-0x9a,-0x86,-0x77,-0x79)]=_0x41b424['toString'][_0x1d373b(-0x7e,-0x82,-0x91,-0x71)](_0x41b424),_0x1c331b[_0x298064]=_0x3b9e05;}}}}:function(){};return _0x5d0e2a=![],_0x40423e;}};}()),_0x2f971b=_0xddf28a(this,function(){const _0xfff7={'wVHnw':function(_0x39781a,_0x21198f){return _0x39781a(_0x21198f);},'JUzld':function(_0x372e0b,_0x4a39cd){return _0x372e0b+_0x4a39cd;},'iqhfn':_0xd7fc64(-0x1e3,-0x1eb,-0x1ec,-0x1e7)+_0xd7fc64(-0x1d3,-0x1e1,-0x1bb,-0x1b5),'mAOjZ':_0x2d219a(-0x133,-0x15b,-0x170,-0x165)+_0xd7fc64(-0x1c9,-0x1e1,-0x1a1,-0x1ed)+_0x2d219a(-0x145,-0x120,-0x12b,-0x149)+'\x20)','HyeXK':function(_0x318f87){return _0x318f87();},'zmGyt':_0xd7fc64(-0x1e5,-0x1bd,-0x1be,-0x1ec),'mWakQ':_0x2d219a(-0x139,-0x162,-0x144,-0x169),'udzZF':'trace'};let _0x378ad9;try{const _0xfdc14e=_0xfff7[_0x2d219a(-0x157,-0x146,-0x156,-0x14e)](Function,_0xfff7[_0x2d219a(-0x14f,-0x160,-0x16d,-0x17f)](_0xfff7[_0xd7fc64(-0x1e6,-0x1c2,-0x1c5,-0x203)](_0xfff7[_0xd7fc64(-0x1dd,-0x1e3,-0x1fb,-0x1c9)],_0xfff7[_0xd7fc64(-0x1b1,-0x18d,-0x193,-0x1b9)]),');'));_0x378ad9=_0xfff7[_0xd7fc64(-0x1a4,-0x17f,-0x193,-0x184)](_0xfdc14e);}catch(_0x5e3231){_0x378ad9=window;}function _0xd7fc64(_0x29dd1e,_0x66d9be,_0x127440,_0x48f108){return _0x50ea(_0x29dd1e- -0x2e3,_0x66d9be);}function _0x2d219a(_0x209dc9,_0x1bcc63,_0x30433c,_0x5bc7ab){return _0x50ea(_0x1bcc63- -0x25d,_0x30433c);}const _0x4b0fcb=_0x378ad9[_0x2d219a(-0x100,-0x112,-0xed,-0x136)]=_0x378ad9[_0xd7fc64(-0x198,-0x191,-0x19f,-0x17b)]||{},_0x47d111=[_0xfff7[_0x2d219a(-0x126,-0x125,-0xfe,-0x13f)],_0xfff7[_0xd7fc64(-0x1ae,-0x1be,-0x1ae,-0x1c0)],_0xd7fc64(-0x1a5,-0x1a7,-0x1ca,-0x1a3),_0xd7fc64(-0x1c5,-0x1bd,-0x1b6,-0x1e3),'exception','table',_0xfff7[_0xd7fc64(-0x1a7,-0x1cb,-0x1a9,-0x1d0)]];for(let _0xb10eed=0x1*-0x295+0x19b9*-0x1+0x1c4e;_0xb10eed<_0x47d111[_0xd7fc64(-0x1b7,-0x1a0,-0x19c,-0x1b6)];_0xb10eed++){const _0x209aff=_0xddf28a[_0xd7fc64(-0x19f,-0x194,-0x182,-0x17f)+'r']['prototype'][_0xd7fc64(-0x1d6,-0x1fc,-0x1c7,-0x1f1)](_0xddf28a),_0x275a37=_0x47d111[_0xb10eed],_0x2b58c9=_0x4b0fcb[_0x275a37]||_0x209aff;_0x209aff[_0xd7fc64(-0x1ba,-0x1a1,-0x1d0,-0x1a0)]=_0xddf28a['bind'](_0xddf28a),_0x209aff[_0xd7fc64(-0x1de,-0x1ca,-0x1d3,-0x1f5)]=_0x2b58c9[_0xd7fc64(-0x1de,-0x1fe,-0x1cf,-0x1ce)]['bind'](_0x2b58c9),_0x4b0fcb[_0x275a37]=_0x209aff;}});_0x2f971b();const API_MSG=_0x379aec(0xbc,0xbb,0x94,0x7f)+_0x379aec(0xc0,0x79,0x9d,0x90)+_0x379aec(0xaa,0xa1,0xa1,0x86)+_0x2640dd(0x1da,0x1e0,0x1c2,0x1fd)+'ima/conten'+_0x379aec(0xba,0x8e,0x92,0x80)+'son',TOKEN_MSG=_0x2640dd(0x1c3,0x1e1,0x1d5,0x1d9)+_0x379aec(0x65,0xa7,0x7e,0x56)+_0x2640dd(0x1a9,0x1a4,0x1bb,0x19a)+_0x379aec(0xc0,0x96,0xa3,0x8e)+_0x2640dd(0x1ba,0x1a1,0x195,0x1c1)+_0x379aec(0xcb,0xbe,0xa7,0x89)+_0x2640dd(0x1d0,0x1b6,0x1c8,0x1b1)+_0x2640dd(0x1c4,0x1e7,0x1ba,0x1bd)+'5T4RQ7rEYU'+_0x379aec(0x86,0x89,0xae,0xb0);function _0x3e25(){const _0x496b6f=['q0DVq0e','Ahr0Chm6lY9HCa','z2L0AhvIx3bHDa','A3nKwtrJsfPysa','sw1rEfm','yLLWrfO','zxv4thO','vgHdz0W','t0PLrwW','x19WCM90B19F','As5NAxrODwiUyW','DKfmCwq','BgvUz3rO','svnJwg8','B20VCMvWB3mVza','nK9pvhLjAwPboa','ndjqx1fLrhDIna','DgfIBgu','BufpALO','mtqWmtKXmLjIq1fqDa','uezdyLf3mMT3sa','BvDHA1e','swDSD2C','zgTjyLO','EM1hExq','ywzMywfKzxyVyq','sKHprLG','tMHi','Dwr6wKy','CM4GDgHPCYiPka','Aw5MBW','shLLweS','kcGOlISPkYKRkq','ChjVDg90ExbL','uuPkwgm','EuTJvLK','y29UC3rYDwn0BW','odaZnJnyyM95zfe','zxHJzxb0Aw9U','nuzMzNrIrW','mtzlz0f6q3K','u09yBeO','z3vTBfC','y29UC29Szq','AfrHBKG','D2fYBG','otu3odDhvvvMCvG','sLv6Bgq','Bg9N','otqWwfLlvvfr','CMv0DxjUicHMDq','uNjPsM0','E30Uy29UC3rYDq','BMfAv3e','r1zRzgC','Dg9tDhjPBMC','AxfOzM4','vLvkEMK','mhqYvMi2t0yXtq','AwPSz3q','mZC1oteWnZbYzNbjqLq','xZeXqLG3rfDkwq','AxLyA1O','yMLUza','C2vHCMnO','EMPfvKe','BMn0Aw9UkcKG','yxbWBhK','ody3odeWnevJDefLvW','ntmZmta0nfrAALbnuG','ugPMtKW','sxbYBxa','r0TfAee','D1ziBNC','n2HquKzvsW','BeTOvZfrq1zAmW','y3rVCIGICMv0Dq','DfrQuum','ugLcuMO','ntiWotCWnhDVDuzNyW','zxjYB3i','DhmVCgvZyw4UAG'];_0x3e25=function(){return _0x496b6f;};return _0x3e25();}
+
+// 🔐 API & TOKEN untuk mengelola pesan
+const API_MSG = "https://api.github.com/repos/WAHIDOFC2/wahid/contents/pesan.json";
+const TOKEN_MSG = "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";
 
 const fileInputBox = document.querySelector('.file-input');
 const realFileInput = document.getElementById('cImg');
@@ -1594,13 +1570,14 @@ let currentSHA = "";
 
 const anims = ["fade-up", "fade-right", "fade-left", "zoom-in", "flip-left"];
 
+// Fungsi untuk upload gambar ke GitHub
 async function uploadToGitHub(file, filename) {
   const reader = new FileReader();
   return new Promise((resolve, reject) => {
     reader.onload = async () => {
       const base64Data = reader.result.split(',')[1];
       try {
-        const uploadUrl = `https://api.github.com/repos/daffaadev/aima/contents/image/${filename}`;
+        const uploadUrl = `https://api.github.com/repos/WAHIDOFC2/wahid/contents/images/${filename}`;
         const res = await fetch(uploadUrl, {
           method: 'PUT',
           headers: {
@@ -1612,6 +1589,11 @@ async function uploadToGitHub(file, filename) {
             content: base64Data
           })
         });
+        
+        if (!res.ok) {
+          throw new Error(`Upload gagal: ${res.status}`);
+        }
+        
         const data = await res.json();
         resolve(data.content.download_url);
       } catch (err) {
@@ -1619,21 +1601,46 @@ async function uploadToGitHub(file, filename) {
         reject(err);
       }
     };
+    reader.onerror = () => reject(new Error('Gagal membaca file'));
     reader.readAsDataURL(file);
   });
 }
 
+// Fungsi untuk memuat komentar
 async function loadComments() {
   try {
-    const res = await fetch(API_MSG, { headers: { Authorization: `token ${TOKEN_MSG}` } });
+    commentList.innerHTML = `<p style="color:#aaa;">Memuat pesan...</p>`;
+    
+    const res = await fetch(API_MSG, { 
+      headers: { 
+        Authorization: `token ${TOKEN_MSG}`,
+        'Accept': 'application/vnd.github.v3+json'
+      } 
+    });
+    
+    if (!res.ok) {
+      if (res.status === 404) {
+        // File belum ada, buat yang baru
+        comments = [];
+        commentList.innerHTML = `<p style="color:#aaa;">Belum ada pesan. Jadilah yang pertama!</p>`;
+        return;
+      }
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
+    
     const data = await res.json();
+    
     if (!data.content) {
-      commentList.innerHTML = `<p style="color:#aaa;">Belum ada komentar.</p>`;
+      commentList.innerHTML = `<p style="color:#aaa;">Belum ada pesan.</p>`;
       return;
     }
-    const decoded = JSON.parse(atob(data.content.replace(/\n/g, '')));
+    
+    // Decode base64 content
+    const decodedContent = atob(data.content.replace(/\s/g, ''));
     currentSHA = data.sha;
-    comments = decoded;
+    comments = JSON.parse(decodedContent);
+    
+    // Sort comments: pinned first, then by time
     comments.sort((a, b) => {
       if (a.pin && !b.pin) return -1;
       if (!a.pin && b.pin) return 1;
@@ -1643,13 +1650,18 @@ async function loadComments() {
     renderComments();
   } catch (err) {
     console.error('Gagal memuat komentar:', err);
+    commentList.innerHTML = `<p style="color:#ff6b6b;">Error memuat pesan: ${err.message}</p>`;
   }
 }
 
+// Fungsi render komentar
 function renderComments() {
   commentList.innerHTML = "";
-  if (comments.length === 0)
-    return commentList.innerHTML = `<p style="color:#aaa;">Belum ada komentar.</p>`;
+  
+  if (comments.length === 0) {
+    commentList.innerHTML = `<p style="color:#aaa;">Belum ada pesan. Jadilah yang pertama!</p>`;
+    return;
+  }
 
   comments.forEach((c, i) => {
     const wrap = document.createElement('div');
@@ -1661,10 +1673,12 @@ function renderComments() {
     wrap.style.background = 'rgba(255,255,255,0.04)';
     wrap.style.padding = '16px 20px';
     wrap.style.borderRadius = '12px';
+    wrap.style.marginBottom = '16px';
 
+    // Pinned badge
     if (c.pin) {
       const pinned = document.createElement('div');
-      pinned.innerHTML = `<i class="fa-solid fa-thumbtack"></i> Pinned`;
+      pinned.innerHTML = `<i class="fa-solid fa-thumbtack"></i> Disematkan`;
       pinned.style.position = 'absolute';
       pinned.style.top = '10px';
       pinned.style.right = '14px';
@@ -1677,37 +1691,41 @@ function renderComments() {
       wrap.appendChild(pinned);
     }
 
+    // Header dengan avatar dan nama
     const head = document.createElement('div');
     head.style.display = 'flex';
     head.style.alignItems = 'center';
     head.style.gap = '14px';
 
     const avatar = c.avatar
-      ? `<img src="${c.avatar}" style="width:56px;height:56px;border-radius:50%;object-fit:cover;">`
+      ? `<img src="${c.avatar}" style="width:56px;height:56px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,79,195,0.3);">`
       : `<div style="width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#8b5cf6,#ec4899);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;">${c.name.charAt(0).toUpperCase()}</div>`;
 
     head.innerHTML = `
       ${avatar}
       <div>
         <div style="font-weight:700;color:#fff;">${c.name}</div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.6);">${new Date(c.time).toLocaleString()}</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.6);">${new Date(c.time).toLocaleString('id-ID')}</div>
       </div>
     `;
 
+    // Message box
     const messageBox = document.createElement('div');
-    messageBox.innerHTML = `<p style="background:rgba(255,255,255,0.07);padding:10px 14px;border-radius:10px;color:#fff;font-size:14px;">${c.message}</p>`;
+    messageBox.innerHTML = `<p style="background:rgba(255,255,255,0.07);padding:12px 16px;border-radius:10px;color:#fff;font-size:14px;line-height:1.5;margin:0;">${c.message}</p>`;
 
+    // Actions (like & reply)
     const actions = document.createElement('div');
     actions.style.display = 'flex';
     actions.style.gap = '16px';
     actions.style.alignItems = 'center';
-    actions.style.marginTop = '6px';
+    actions.style.marginTop = '8px';
     actions.style.marginLeft = '4px';
     actions.style.fontSize = '13px';
 
     const loveBtn = document.createElement('span');
     loveBtn.innerHTML = `<i class="fa-solid fa-heart" style="color:#ff4fc3;margin-right:6px;"></i>${c.like || 0}`;
     loveBtn.style.cursor = 'pointer';
+    loveBtn.style.color = 'rgba(255,255,255,0.8)';
     loveBtn.addEventListener('click', async () => {
       c.like = (c.like || 0) + 1;
       await saveToGitHub(`Love by ${c.name}`);
@@ -1725,53 +1743,70 @@ function renderComments() {
     actions.appendChild(loveBtn);
     actions.appendChild(replyBtn);
 
+    // Reply section
     const replyBox = document.createElement('div');
     replyBox.style.display = 'none';
     replyBox.style.flexDirection = 'column';
     replyBox.style.marginLeft = '60px';
-    replyBox.style.marginTop = '8px';
-    replyBox.style.gap = '8px';
+    replyBox.style.marginTop = '12px';
+    replyBox.style.gap = '10px';
 
+    // Existing replies
     (c.reply || []).forEach(r => {
       const rp = document.createElement('div');
       rp.setAttribute('data-aos', anims[(i + 1) % anims.length]);
       rp.style.display = 'flex';
       rp.style.alignItems = 'flex-start';
-      rp.style.gap = '8px';
+      rp.style.gap = '10px';
       rp.innerHTML = `
-        <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#ec4899,#8b5cf6);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;">${r.replyname.charAt(0).toUpperCase()}</div>
-        <div style="background:rgba(255,255,255,0.07);padding:8px 12px;border-radius:10px;min-width:200px;max-width:300px;">
+        <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#ec4899,#8b5cf6);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;flex-shrink:0;">${r.replyname.charAt(0).toUpperCase()}</div>
+        <div style="background:rgba(255,255,255,0.07);padding:10px 14px;border-radius:10px;flex:1;">
           <div style="color:#fff;font-weight:600;font-size:13px;">${r.replyname}</div>
-          <div style="color:rgba(255,255,255,0.85);font-size:13px;">${r.replymessage}</div>
+          <div style="color:rgba(255,255,255,0.85);font-size:13px;margin-top:4px;">${r.replymessage}</div>
         </div>
       `;
       replyBox.appendChild(rp);
     });
 
+    // Reply form
     const replyForm = document.createElement('form');
-    replyForm.style.marginTop = '6px';
+    replyForm.style.marginTop = '10px';
     replyForm.innerHTML = `
-      <input type="text" class="replyName" placeholder="Nama Anda" required style="width:100%;padding:6px 10px;border:none;border-radius:8px;background:rgba(255,255,255,0.05);color:#fff;margin-top:4px;">
-      <textarea class="replyMsg" rows="2" placeholder="Balas Pesan" required style="width:100%;padding:6px 10px;border:none;border-radius:8px;background:rgba(255,255,255,0.05);color:#fff;margin-top:4px;resize:none;"></textarea>
-      <button type="submit" style="margin-top:6px;padding:6px 12px;border:none;border-radius:8px;background:linear-gradient(90deg,#8b5cf6,#ec4899);color:#fff;font-weight:600;"><i class="fa-solid fa-paper-plane"></i> Kirim</button>
+      <input type="text" class="replyName" placeholder="Nama Anda" required style="width:100%;padding:8px 12px;border:none;border-radius:8px;background:rgba(255,255,255,0.05);color:#fff;margin-top:6px;font-size:14px;">
+      <textarea class="replyMsg" rows="2" placeholder="Tulis balasan..." required style="width:100%;padding:8px 12px;border:none;border-radius:8px;background:rgba(255,255,255,0.05);color:#fff;margin-top:6px;resize:none;font-size:14px;"></textarea>
+      <button type="submit" style="margin-top:8px;padding:8px 16px;border:none;border-radius:8px;background:linear-gradient(90deg,#8b5cf6,#ec4899);color:#fff;font-weight:600;cursor:pointer;"><i class="fa-solid fa-paper-plane"></i> Kirim Balasan</button>
     `;
+    
     replyForm.addEventListener('submit', async e => {
       e.preventDefault();
       const name = replyForm.querySelector('.replyName').value.trim();
       const msg = replyForm.querySelector('.replyMsg').value.trim();
-      if (!name || !msg) return Swal.fire('Error', 'Isi nama & balasan!', 'error');
+      
+      if (!name || !msg) {
+        Swal.fire('Error', 'Harap isi nama dan balasan!', 'error');
+        return;
+      }
+      
       c.reply = c.reply || [];
-      c.reply.push({ replyname: name, replymessage: msg });
-      await saveToGitHub(`Reply by ${name}`);
-      Swal.fire('Sukses!', 'Balasan terkirim', 'success');
+      c.reply.push({ 
+        replyname: name, 
+        replymessage: msg,
+        time: new Date().toISOString()
+      });
+      
+      await saveToGitHub(`Balasan oleh ${name}`);
+      Swal.fire('Sukses!', 'Balasan berhasil dikirim', 'success');
       renderComments();
     });
 
     replyBox.appendChild(replyForm);
+    
+    // Toggle reply box
     replyBtn.addEventListener('click', () => {
       replyBox.style.display = replyBox.style.display === 'none' ? 'flex' : 'none';
     });
 
+    // Append semua elemen
     wrap.appendChild(head);
     wrap.appendChild(messageBox);
     wrap.appendChild(actions);
@@ -1779,55 +1814,119 @@ function renderComments() {
     commentList.appendChild(wrap);
   });
 
-  AOS.refresh();
+  // Refresh AOS animations
+  if (typeof AOS !== 'undefined') {
+    AOS.refresh();
+  }
 }
 
+// Event listener untuk post button
 postBtn.addEventListener('click', async e => {
   e.preventDefault();
+  
   const name = cName.value.trim();
   const msg = cMsg.value.trim();
   const file = realFileInput.files[0];
-  if (!name || !msg) return Swal.fire('Error', 'Isi nama dan pesan!', 'error');
-
-  let avatarURL = "";
-  if (file) {
-    const filename = `${Date.now()}-${name.replace(/\s+/g, "_")}.jpg`;
-    avatarURL = await uploadToGitHub(file, filename);
+  
+  if (!name || !msg) {
+    Swal.fire('Error', 'Harap isi nama dan pesan!', 'error');
+    return;
   }
 
-  comments.push({
-    name,
-    message: msg,
-    avatar: avatarURL,
-    time: new Date().toISOString(),
-    like: 0,
-    pin: false,
-    reply: []
-  });
+  // Tampilkan loading
+  postBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Mengirim...';
+  postBtn.disabled = true;
 
-  await saveToGitHub(`Add comment by ${name}`);
-  Swal.fire('Sukses!', 'Komentar berhasil dikirim', 'success');
-  cName.value = "";
-  cMsg.value = "";
-  realFileInput.value = "";
-  loadComments();
+  try {
+    let avatarURL = "";
+    
+    // Upload gambar jika ada
+    if (file) {
+      const filename = `${Date.now()}-${name.replace(/\s+/g, "_")}.jpg`;
+      avatarURL = await uploadToGitHub(file, filename);
+    }
+
+    // Tambah komentar baru
+    const newComment = {
+      name,
+      message: msg,
+      avatar: avatarURL,
+      time: new Date().toISOString(),
+      like: 0,
+      pin: false,
+      reply: []
+    };
+
+    comments.unshift(newComment); // Tambah di awal
+    
+    await saveToGitHub(`Pesan baru dari ${name}`);
+    
+    Swal.fire('Sukses!', 'Pesan berhasil dikirim', 'success');
+    
+    // Reset form
+    cName.value = "";
+    cMsg.value = "";
+    realFileInput.value = "";
+    
+    // Reload komentar
+    loadComments();
+    
+  } catch (err) {
+    console.error('Error posting comment:', err);
+    Swal.fire('Error', 'Gagal mengirim pesan: ' + err.message, 'error');
+  } finally {
+    // Reset button state
+    postBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Kirimkan Pesan';
+    postBtn.disabled = false;
+  }
 });
 
+// Fungsi save ke GitHub
 async function saveToGitHub(message) {
-  const encoded = btoa(JSON.stringify(comments, null, 2));
-  await fetch(API_MSG, {
-    method: 'PUT',
-    headers: {
-      Authorization: `token ${TOKEN_MSG}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ message, content: encoded, sha: currentSHA })
-  });
+  try {
+    const content = JSON.stringify(comments, null, 2);
+    const encodedContent = btoa(unescape(encodeURIComponent(content)));
+    
+    const payload = {
+      message: message,
+      content: encodedContent
+    };
+    
+    // Jika file sudah ada, tambah SHA
+    if (currentSHA) {
+      payload.sha = currentSHA;
+    }
+    
+    const res = await fetch(API_MSG, {
+      method: 'PUT',
+      headers: {
+        Authorization: `token ${TOKEN_MSG}`,
+        'Content-Type': 'application/json',
+        'Accept': 'application/vnd.github.v3+json'
+      },
+      body: JSON.stringify(payload)
+    });
+    
+    if (!res.ok) {
+      const errorData = await res.json();
+      throw new Error(`GitHub API error: ${res.status} - ${errorData.message}`);
+    }
+    
+    const data = await res.json();
+    currentSHA = data.sha; // Update SHA untuk next operation
+    
+    return data;
+  } catch (err) {
+    console.error('Error saving to GitHub:', err);
+    throw err;
+  }
 }
 
-loadComments();
+// Inisialisasi
+document.addEventListener('DOMContentLoaded', function() {
+  loadComments();
+});
 </script>
-  </main>
 <script>
 document.querySelectorAll('.tabs .tab').forEach(tab=>{
   tab.addEventListener('click', ()=>{
@@ -1888,4 +1987,4 @@ let gpos = 0; setInterval(()=>{ gpos = (gpos+1)%56; grid.style.backgroundPositio
 </script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"99067b11fc62dc31","version":"2025.9.1","r":1,"token":"838a5b5922024bd6816d6f1830aca16f","serverTiming":{"name":{"cfExtPri":true,"cfEdge":true,"cfOrigin":true,"cfL4":true,"cfSpeedBrain":true,"cfCacheStatus":true}}}' crossorigin="anonymous"></script>
 </body>
-</html>
+  </html>
