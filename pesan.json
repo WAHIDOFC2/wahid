@@ -1,20 +1,20 @@
 [
   {
+    "name": "Aurel",
+    "message": "HAII Ganteng",
+    "avatar": "https://raw.githubusercontent.com/WAHIDOFC2/wahid/refs/heads/main/image/snapsave-app_3635215674517193675.jpg",
+    "time": "2025-10-15T14:42:47.568Z",
+    "like": 2,
+    "pin": true,
+    "reply": []
+  },
+  {
     "name": "Lexxa2nd",
     "message": "Haii Hid",
     "avatar": "",
     "time": "2025-10-19T01:13:08.624Z",
     "like": 0,
     "pin": false,
-    "reply": []
-  },
-  {
-    "name": "Aurel",
-    "message": "HAII Ganteng",
-    "avatar": "https://raw.githubusercontent.com/WAHIDOFC2/wahid/refs/heads/main/image/snapsave-app_3635215674517193675.jpg",
-    "time": "2025-10-15T14:42:47.568Z",
-    "like": 1,
-    "pin": true,
     "reply": []
   }
 ]
